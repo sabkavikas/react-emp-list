@@ -95,10 +95,14 @@ const EmployeeForm = (props) => {
         <div className='offset-lg-3 col-lg-6'>
           <div className='card'>
             <div className='card-header bg-primary'>
-              <h4 className='card-title text-white'>Employee Form</h4>
+              <h4 className='card-title text-center text-white'>
+                Employee Form
+              </h4>
             </div>
             <div className='card-body'>
-              <p className='text-danger'>{errorMsg ? errorMsg : ''}</p>
+              <p className='text-danger text-center'>
+                {errorMsg ? errorMsg : ''}
+              </p>
               <form onSubmit={onSubmitHandler}>
                 <div className='form-group mb-3'>
                   <label htmlFor='name' className='form-label'>
