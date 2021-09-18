@@ -17,9 +17,9 @@ const EmployeeList = () => {
       {/* Basic Table */}
       <div className='row'>
         <div className='col'>
-          <div className='card'>
+          <div className='card shadow'>
             <div className='card-header bg-primary text-white text-center'>
-              Employee List
+              Basic Employee List
             </div>
             <div className='card-body'>
               <div className='table-responsive'>
@@ -50,7 +50,9 @@ const EmployeeList = () => {
                       })
                     ) : (
                       <tr>
-                        <td colspan='6'>No Record Found</td>
+                        <td colSpan='6' className='text-center'>
+                          No Record Found
+                        </td>
                       </tr>
                     )}
                   </tbody>
@@ -64,50 +66,60 @@ const EmployeeList = () => {
       {/* Advanced Table */}
       <div className='row'>
         <div className='col'>
-          <div className='card'>
+          <div className='card shadow'>
             <div className='card-header bg-primary text-white text-center'>
-              Employee List
+              Advance Employee List
             </div>
             <div className='card-body'>
               <div className='table-responsive'>
                 <table className='table table-bordered'>
                   <tbody>
-                    <tr>
-                      <th>Name</th>
-                      {empList.map((emp, index) => (
-                        <td key={index}>{emp.name}</td>
-                      ))}
-                    </tr>
-                    <tr>
-                      <th>Email</th>
-                      {empList.map((emp, index) => (
-                        <td key={index}>{emp.email}</td>
-                      ))}
-                    </tr>
-                    <tr>
-                      <th>Date Of Birth</th>
-                      {empList.map((emp, index) => (
-                        <td key={index}>{emp.dob}</td>
-                      ))}
-                    </tr>
-                    <tr>
-                      <th>Gender</th>
-                      {empList.map((emp, index) => (
-                        <td key={index}>{emp.gen}</td>
-                      ))}
-                    </tr>
-                    <tr>
-                      <th>Hobbies</th>
-                      {empList.map((emp, index) => (
-                        <td key={index}>{emp.hobbies}</td>
-                      ))}
-                    </tr>
-                    <tr>
-                      <th>Phone</th>
-                      {empList.map((emp, index) => (
-                        <td key={index}>{emp.phone}</td>
-                      ))}
-                    </tr>
+                    {empList.length > 0 ? (
+                      <>
+                        <tr>
+                          <th>Name</th>
+                          {empList.map((emp, index) => (
+                            <td key={index}>{emp.name}</td>
+                          ))}
+                        </tr>
+                        <tr>
+                          <th>Email</th>
+                          {empList.map((emp, index) => (
+                            <td key={index}>{emp.email}</td>
+                          ))}
+                        </tr>
+                        <tr>
+                          <th>Date Of Birth</th>
+                          {empList.map((emp, index) => (
+                            <td key={index}>{emp.dob}</td>
+                          ))}
+                        </tr>
+                        <tr>
+                          <th>Gender</th>
+                          {empList.map((emp, index) => (
+                            <td key={index}>{emp.gen}</td>
+                          ))}
+                        </tr>
+                        <tr>
+                          <th>Hobbies</th>
+                          {empList.map((emp, index) => (
+                            <td key={index}>{emp.hobbies}</td>
+                          ))}
+                        </tr>
+                        <tr>
+                          <th>Phone</th>
+                          {empList.map((emp, index) => (
+                            <td key={index}>{emp.phone}</td>
+                          ))}
+                        </tr>
+                      </>
+                    ) : (
+                      <tr>
+                        <td colSpan='6' className='text-center'>
+                          No Record Found
+                        </td>
+                      </tr>
+                    )}
                   </tbody>
                 </table>
               </div>

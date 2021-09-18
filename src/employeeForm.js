@@ -58,7 +58,7 @@ const EmployeeForm = (props) => {
   const onSubmitHandler = (e) => {
     e.preventDefault();
     if (name.length < 4 || name.length > 20) {
-      setErrorMsg('Enter name between 4 to 20 character');
+      setErrorMsg('Enter name between 4 to 20 characters');
       return;
     }
     if (!validateName(name)) {
@@ -71,7 +71,7 @@ const EmployeeForm = (props) => {
     }
 
     if (validateDate(dob)) {
-      setErrorMsg('Enter date less than today');
+      setErrorMsg('Future date not allowed');
       return;
     }
     if (!validatePhone(phone)) {
